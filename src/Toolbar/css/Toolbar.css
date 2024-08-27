@@ -1,27 +1,20 @@
-.avatar-container {
-    display: flex;
-    align-items: center;
+.overlay-content {
+    position: absolute;
+    top: 20%; /* Ajuste conforme necessário */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.8); /* Fundo semi-transparente */
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 100; /* Alta prioridade para aparecer à frente do Dock */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 60%; /* Ajuste o tamanho conforme necessário */
+    max-width: 800px;
+    text-align: center;
+    backdrop-filter: blur(5px); /* Adiciona um leve desfoque ao fundo */
 }
 
-.avatar-image {
-    width: 70px;
-    height: 70px;
-}
-
-.end-container {
-    display: flex;
-    align-items: center;
-    gap: 2px;
-    padding: 2.2rem 3rem;
-    display: inline-block;
-    font-size: 1rem;
-    color: #333;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 700;
-    transition: color .3s;
-}
-
-.end-container span {
-    margin-left: 10px;
+.dock-demo {
+    position: relative;
+    z-index: 1;
 }

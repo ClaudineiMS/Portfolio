@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Menubar } from 'primereact/menubar';
 import { Badge } from 'primereact/badge';
-import { Avatar } from 'primereact/avatar';  
-import img from '../../img/file.jpeg';
-import '../css/Toolbar.css';
 import Dock from '../../Dock/components/Dock';
+import { HomeContent } from '../../Home/components/Home';
+import { AboutContent } from '../../About/components/About';
+import { Foto } from '../../Avatar/components/Foto';
+import { Autor } from '../../Autor/components/Autor';
+import '../css/Toolbar.css';
 
 export default function TemplateDemo() {
+    const [activeContent, setActiveContent] = useState(null);
+
     const itemRenderer = (item) => (
         <a className="flex align-items-center p-menuitem-link">
             <span className={item.icon} />
@@ -19,11 +23,13 @@ export default function TemplateDemo() {
     const items = [
         {
             label: 'Home',
-            icon: 'pi pi-home'
+            icon: 'pi pi-home',
+            command: () => setActiveContent('home')
         },
         {
-            label: 'Features',
-            icon: 'pi pi-star'
+            label: 'Sobre mim',
+            icon: 'pi pi-star',
+            command: () => setActiveContent('about')
         },
         {
             label: 'Projects',
@@ -67,30 +73,15 @@ export default function TemplateDemo() {
                     ]
                 }
             ]
-        },
-        {
-            label: 'Contact',
-            icon: 'pi pi-envelope',
-            template: itemRenderer
         }
     ];
 
-    const start = (
-        <div className="avatar-container">
-            <Avatar image={img} shape="circle" className="avatar-image" />
-        </div>
-    );
-  
-    const end = (
-        <div className="end-container">
-            <span>Claudinei Moreira</span>
-        </div>
-    );
-
     return (
         <div className="card">
-            <Menubar model={items} start={start} end={end} />
+            <Menubar model={items} start={Foto} end={Autor} />
             <Dock />
+            {activeContent === 'home' && <HomeContent />}
+            {activeContent === 'about' && <AboutContent />}
         </div>
     );
 }

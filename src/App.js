@@ -6,9 +6,7 @@ import Toolbar from './Toolbar/component/Toolbar';
 function App() {
   return (
     <PrimeReactProvider>
-      <div>
-        <Toolbar /> 
-      </div>
+      <Toolbar /> 
     </PrimeReactProvider>
 );
 }
