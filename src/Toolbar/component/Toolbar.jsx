@@ -1,10 +1,10 @@
-
 import React from 'react';
 import { Menubar } from 'primereact/menubar';
-import { InputText } from 'primereact/inputtext';
 import { Badge } from 'primereact/badge';
 import { Avatar } from 'primereact/avatar';  
 import img from '../../img/file.jpeg';
+import '../css/Toolbar.css';
+import Dock from '../../Dock/components/Dock';
 
 export default function TemplateDemo() {
     const itemRenderer = (item) => (
@@ -15,6 +15,7 @@ export default function TemplateDemo() {
             {item.shortcut && <span className="ml-auto border-1 surface-border border-round surface-100 text-xs p-1">{item.shortcut}</span>}
         </a>
     );
+
     const items = [
         {
             label: 'Home',
@@ -56,13 +57,11 @@ export default function TemplateDemo() {
                         {
                             label: 'Apollo',
                             icon: 'pi pi-palette',
-                            //badge: 2,
                             template: itemRenderer
                         },
                         {
                             label: 'Ultima',
                             icon: 'pi pi-palette',
-                            //badge: 3,
                             template: itemRenderer
                         }
                     ]
@@ -72,28 +71,26 @@ export default function TemplateDemo() {
         {
             label: 'Contact',
             icon: 'pi pi-envelope',
-            //badge: 3,
             template: itemRenderer
         }
     ];
 
-    const start =  (    
-        <div style={{ display: 'flex', alignItems: 'center' }}>
-            <Avatar image={img} shape="circle" style={{ width: '70px', height: '70px' }} />
-            <span style={{ marginLeft: '10px' }}>Claudinei Moreira</span>
+    const start = (
+        <div className="avatar-container">
+            <Avatar image={img} shape="circle" className="avatar-image" />
         </div>
     );
   
     const end = (
-        <div className="flex align-items-center gap-2">
-            <InputText placeholder="Search" type="text" className="w-8rem sm:w-auto" />
+        <div className="end-container">
+            <span>Claudinei Moreira</span>
         </div>
     );
 
     return (
         <div className="card">
-            <Menubar model={items} start={start} /*end={end}*/ />
+            <Menubar model={items} start={start} end={end} />
+            <Dock />
         </div>
-    )
+    );
 }
-        

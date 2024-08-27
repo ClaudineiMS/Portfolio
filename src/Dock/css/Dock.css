@@ -1,0 +1,15 @@
+.dock-demo {
+    height: 100vh;
+    display: flex;
+}
+
+.dock-window {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.p-dock{
+    width: 6%;
+}
