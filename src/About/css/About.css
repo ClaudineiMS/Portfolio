@@ -1,0 +1,16 @@
+.about {
+    text-align: justify;
+    font-size: 16px;
+    line-height: 1.6;
+    font-weight: 300;
+    color: #333; 
+}
+  
+.Title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600; 
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+  

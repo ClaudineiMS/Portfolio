@@ -52,25 +52,6 @@ export default function TemplateDemo() {
                     icon: 'pi pi-pencil',
                     shortcut: '⌘+U',
                     template: itemRenderer
-                },
-                {
-                    separator: true
-                },
-                {
-                    label: 'Templates',
-                    icon: 'pi pi-palette',
-                    items: [
-                        {
-                            label: 'Apollo',
-                            icon: 'pi pi-palette',
-                            template: itemRenderer
-                        },
-                        {
-                            label: 'Ultima',
-                            icon: 'pi pi-palette',
-                            template: itemRenderer
-                        }
-                    ]
                 }
             ]
         }

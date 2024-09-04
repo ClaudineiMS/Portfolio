@@ -1,6 +1,6 @@
 import { Dock } from 'primereact/dock';
 import '../css/Dock.css';
-import { FaLinkedin, FaGithub, FaInstagram } from 'react-icons/fa'; 
+import { FaLinkedin, FaGithub } from 'react-icons/fa'; 
 import { BiLogoGmail } from "react-icons/bi"; 
 
 export default function BasicDemo() {
